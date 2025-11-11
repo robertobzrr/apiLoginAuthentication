@@ -1,6 +1,6 @@
 package com.robertoapi.login_and_authentication_api.service;
 
-import com.robertoapi.login_and_authentication_api.model.TB_Product;
+import com.robertoapi.login_and_authentication_api.model.Product;
 import com.robertoapi.login_and_authentication_api.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public void createProduct(TB_Product product){
+    public void createProduct(Product product){
         productRepository.save(product);
     }
 

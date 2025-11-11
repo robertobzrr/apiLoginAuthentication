@@ -1,5 +1,5 @@
 package com.robertoapi.login_and_authentication_api.service;
-import com.robertoapi.login_and_authentication_api.model.TB_User;
+import com.robertoapi.login_and_authentication_api.model.User;
 import com.robertoapi.login_and_authentication_api.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,17 +16,17 @@ public class UserService {
     }
 
 
-    public void createUser(TB_User user){
+    public void createUser(User user){
         userRepository.save(user);
     }
 
 
-    public List<TB_User> findAllUsers(){
+    public List<User> findAllUsers(){
         return userRepository.findAll();
     }
 
 
-    public Optional<TB_User> findUserById(Long id){
+    public Optional<User> findUserById(Long id){
         return userRepository.findById(id);
     }
 

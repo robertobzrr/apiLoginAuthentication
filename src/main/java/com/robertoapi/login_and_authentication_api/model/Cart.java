@@ -6,15 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@AllArgsConstructor
+@Table(name = "tb_cart")
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-@Table(name = "tb_user")
-public class TB_User {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
+    private String nameCart;
+
+    @ManyToOne
+    private Product product;
+
+
 }

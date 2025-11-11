@@ -6,16 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_products")
-public class TB_Product {
+@NoArgsConstructor
+@Data
+@Table(name = "tb_user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String name;
-
+    private String username;
+    private String password;
 }

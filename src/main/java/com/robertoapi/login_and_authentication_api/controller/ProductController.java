@@ -1,6 +1,6 @@
 package com.robertoapi.login_and_authentication_api.controller;
 
-import com.robertoapi.login_and_authentication_api.model.TB_Product;
+import com.robertoapi.login_and_authentication_api.model.Product;
 import com.robertoapi.login_and_authentication_api.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody TB_Product product){
+    public void createProduct(@RequestBody Product product){
         productService.createProduct(product);
     }
 
