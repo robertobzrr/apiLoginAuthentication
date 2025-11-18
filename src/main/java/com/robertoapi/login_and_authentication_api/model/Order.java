@@ -20,12 +20,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Enumerated(EnumType.STRING)
     private OrderStatusEnum status;
 
 
 
     @ManyToOne
-    @JoinColumn(name = "id_client")
+    @JoinColumn(name = "id_user")
     private User user;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)

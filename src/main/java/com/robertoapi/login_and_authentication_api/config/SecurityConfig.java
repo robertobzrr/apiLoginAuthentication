@@ -22,6 +22,8 @@ public class SecurityConfig {
                         .requestMatchers("/products/**").permitAll()
                         .requestMatchers("/carts/**").permitAll()
                         .requestMatchers("/categorys/**").permitAll()
+                        .requestMatchers("/orders/**").permitAll()
+                        .requestMatchers("/inventorys/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();
