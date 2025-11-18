@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -15,9 +18,30 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameOrders;
+    private String name;
+    private Integer orderStatus;
 
 
-    //need to conect CART <-> ORDER, The order is the last step to close the cart seller.
+    //fazer ENUM depois
+    // , NÃO ESQUERCE!!!!!!!!!!!!
+    // ENUM AQUI!!!!
 
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_client")
+    private User user;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderItem> items = new ArrayList<>();
+
+
+    public Double getTotal() {
+        double sum = 0.0;
+        for (OrderItem x : items) {
+            sum += x.getSubTotal();
+        }
+        return sum;
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.robertoapi.login_and_authentication_api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,12 +16,16 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Integer quantity;
 
     @OneToOne
-    @JoinColumn(name = "id_product")
+    @JoinColumn(name = "id_product", nullable = false)
+    @JsonIgnore
     private Product product;
 
-    private int estoque;
+
+
+
 
 
 

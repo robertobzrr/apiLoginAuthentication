@@ -6,31 +6,35 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Table(name = "tb_user")
-public class User {
+@Table(name = "tb_order_item")
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String email;
-    private String password;
+    private Integer quantity;
+    private Double price;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+
+    @ManyToOne
+    @JoinColumn(name = "id_product")
+    private Product product;
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_order")
     @JsonIgnore
-    private Cart cart;
+    private Order order;
 
 
-    @OneToMany(mappedBy = "user")
-    @JsonIgnore
-    private List<Order> orders = new ArrayList<>();
+    public Double getSubTotal(){
+        return price.doubleValue()*quantity;
+    }
+
 
 
 }
