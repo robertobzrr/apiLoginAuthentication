@@ -1,5 +1,6 @@
 package com.robertoapi.login_and_authentication_api.model;
 
+import com.robertoapi.login_and_authentication_api.enums.OrderStatusEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,12 +20,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Integer orderStatus;
-
-
-    //fazer ENUM depois
-    // , NÃO ESQUERCE!!!!!!!!!!!!
-    // ENUM AQUI!!!!
+    private OrderStatusEnum status;
 
 
 
