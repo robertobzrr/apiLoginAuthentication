@@ -1,5 +1,7 @@
 package com.robertoapi.login_and_authentication_api.controller;
 
+import com.robertoapi.login_and_authentication_api.dtos.ProductRequestDTO;
+import com.robertoapi.login_and_authentication_api.dtos.ProductResponseDTO;
 import com.robertoapi.login_and_authentication_api.model.Product;
 import com.robertoapi.login_and_authentication_api.service.ProductService;
 import org.springframework.http.HttpStatus;
@@ -22,21 +24,21 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody Product product){
-        productService.createProduct(product);
+    public void createProduct(@RequestBody ProductRequestDTO productDTO){
+        productService.createProduct(productDTO);
     }
 
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Product> findAllProducts(){
+    public List<ProductResponseDTO> findAllProducts(){
         return productService.findAllProducts();
     }
 
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Product> findProductById(@PathVariable Long id){
+    public Optional<ProductResponseDTO> findProductById(@PathVariable Long id){
         return productService.findProductById(id);
     }
 
@@ -50,8 +52,8 @@ public class ProductController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateProductById(@PathVariable Long id, @RequestBody Product updateProduct){
-        productService.updateProductById(id, updateProduct);
+    public void updateProductById(@PathVariable Long id, @RequestBody ProductRequestDTO updateProductDTO){
+        productService.updateProductById(id, updateProductDTO);
     }
 
 
