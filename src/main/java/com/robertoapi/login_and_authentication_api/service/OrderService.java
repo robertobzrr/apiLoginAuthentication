@@ -2,6 +2,7 @@ package com.robertoapi.login_and_authentication_api.service;
 
 import com.robertoapi.login_and_authentication_api.dtos.OrderRequestDTO;
 import com.robertoapi.login_and_authentication_api.dtos.OrderResponseDTO;
+import com.robertoapi.login_and_authentication_api.mappers.UserMapper;
 import com.robertoapi.login_and_authentication_api.model.Order;
 import com.robertoapi.login_and_authentication_api.repository.OrderRepository;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,11 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final UserMapper userMapper;
 
-    public OrderService(OrderRepository orderRepository){
+    public OrderService(OrderRepository orderRepository, UserMapper userMapper){
         this.orderRepository = orderRepository;
+        this.userMapper = userMapper;
     }
 
 //------------------------------------------------------------------------------------------
@@ -55,7 +58,7 @@ public class OrderService {
 
         respDTO.setName(order.getName());
         respDTO.setStatus(order.getStatus());
-       // respDTO.setUser(order.getUser());
+        respDTO.setUser(userMapper.toResponseDTO(order.getUser()));
         respDTO.setItens(order.getItems());
 
 
