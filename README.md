@@ -49,4 +49,27 @@ AFTER_MAP
 
 
 
+-
+-
+-
+-
+
+-> Insomnia testes outputs
+
+USERS:
+<img width="1643" height="866" alt="Captura de tela 2025-11-24 182406" src="https://github.com/user-attachments/assets/fc14bbfc-273a-4530-b65e-3bc3cdeafeb9" />
+
+PRODUCTS
+<img width="1634" height="739" alt="Captura de tela 2025-11-24 182414" src="https://github.com/user-attachments/assets/e081cb73-7e76-436f-b3bc-addbd711046e" />
+
+INVENTORYS
+<img width="1711" height="678" alt="Captura de tela 2025-11-24 182432" src="https://github.com/user-attachments/assets/412d4477-99ae-49b6-be6b-08246b8df7d8" />
+
+CATEGORYS
+<img width="1726" height="1042" alt="Captura de tela 2025-11-24 182441" src="https://github.com/user-attachments/assets/ac392d23-41b6-40c3-ad71-615d01c8ddf2" />
+
+CARTS
+<img width="1628" height="949" alt="Captura de tela 2025-11-24 182449" src="https://github.com/user-attachments/assets/4a6ab6ca-71b6-4104-bc56-2c454e14eda7" />
+
+
 
